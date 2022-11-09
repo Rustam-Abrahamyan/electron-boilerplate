@@ -1,0 +1,69 @@
+{
+    "name": "electron-boilerplate",
+    "version": "1.0.0",
+    "description": "Electron boilerplate for desktop apps using Electron, React and Typescript",
+    "author": "Rustam Abrahamyan",
+    "scripts": {
+        "start": "npx concurrently \"npx webpack serve --config-name renderer --env hot-reload\" \"npx webpack --config-name main && npx electron ./dist/main.js\" --kill-others",
+        "start:prod": "npm run build:prod && npx electron ./dist/main.js",
+        "build": "npx webpack",
+        "build:prod": "npx webpack --env production",
+        "pack": "npx rimraf ./pack && npm run build:prod && npx electron-packager ./dist --out ./pack --overwrite"
+    },
+    "main": "main.js",
+    "license": "MIT",
+    "keywords": [
+        "electron",
+        "react",
+        "typescript"
+    ],
+    "homepage": "https://github.com/Rustam-Abrahamyan/electron-boilerplate",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Rustam-Abrahamyan/electron-boilerplate.git"
+    },
+    "bugs": {
+        "url": "https://github.com/Rustam-Abrahamyan/electron-boilerplate/issues"
+    },
+    "dependencies": {
+        "@electron/remote": "^2.0.8",
+        "@fontsource/roboto": "^4.5.8",
+        "electron": "^21.1.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.4.2",
+        "styled-components": "^5.3.6"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.19.3",
+        "@babel/plugin-transform-runtime": "^7.19.1",
+        "@babel/preset-react": "^7.18.6",
+        "@babel/preset-typescript": "^7.18.6",
+        "@pmmmwh/react-refresh-webpack-plugin": "^0.5.8",
+        "@types/node": "^18.11.0",
+        "@types/react": "^18.0.21",
+        "@types/react-dom": "^18.0.6",
+        "@types/react-router-dom": "^5.3.3",
+        "@types/styled-components": "^5.1.26",
+        "@types/webpack": "^5.28.0",
+        "@types/webpack-dev-server": "^4.7.2",
+        "@types/webpack-env": "^1.18.0",
+        "babel-loader": "^8.2.5",
+        "clean-webpack-plugin": "^4.0.0",
+        "concurrently": "^7.4.0",
+        "copy-webpack-plugin": "^11.0.0",
+        "electron-packager": "^16.0.0",
+        "file-loader": "^6.2.0",
+        "html-webpack-plugin": "^5.5.0",
+        "react-refresh": "^0.14.0",
+        "rimraf": "^3.0.2",
+        "ts-node": "^10.9.1",
+        "tsconfig-paths-webpack-plugin": "^4.0.0",
+        "typescript": "^4.8.4",
+        "webpack": "^5.74.0",
+        "webpack-cli": "^4.10.0",
+        "webpack-dev-middleware": "^5.3.3",
+        "webpack-dev-server": "^4.11.1",
+        "webpack-merge": "^5.8.0"
+    }
+}

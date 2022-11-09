@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "CommonJS",
+        "jsx": "react",
+        "resolveJsonModule": true,
+        "sourceMap": true,
+        "strict": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "baseUrl": "./",
+        "paths": {
+            "@/electron/*": ["src/electron/*"],
+            "@/renderer/*": ["src/renderer/*"],
+            "@/components/*": ["src/renderer/components/*"],
+            "@/assets/*": ["src/assets/*"],
+            "@/shared/*": ["src/shared/*"]
+        }
+    }
+}
